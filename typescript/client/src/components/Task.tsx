@@ -1,7 +1,16 @@
 import "./styles.scss";
 
+type Place = 'Home' | 'Work' | { custom: string };
+
+type Todo = Readonly<{
+    id: number,
+    text: string,
+    done: boolean,
+    place?: Place,
+}>
+
 interface TaskProps {
-    todo: string;
+    todo: Todo;
 }
 
 const Task = ({ todo }: TaskProps ) => {
@@ -35,7 +44,7 @@ const Task = ({ todo }: TaskProps ) => {
     
   return (
     <div className='task'>
-        <p>{todo}</p>
+        <p>{todo.text}</p>
     </div>
   )
 }

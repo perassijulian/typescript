@@ -1,46 +1,31 @@
-# Getting Started with Create React App
+# Typescript sandbox
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Repository made to experiment with projects made in Typescript language. Starting the project using React.js and then integrating it with Node.js. 
 
-## Available Scripts
+### Showcase
 
-In the project directory, you can run:
+It's still on early stage. When there is something to show it will be uploaded to Vercel.
 
-### `npm start`
+## Focus
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+First project using Typescript. I am clearly focusing on learning the language, but also on reinforcing my knowledge of all MERN stack since I'm doing it from scratch (as all the ones that I have on Github).
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Concepts
 
-### `npm test`
+The main concepts that I reaffirmed doing this project were the basic typescript variables declaration, passing props between components, concept of composable component, the use of mapping for rendering, conditional rendering, the use of SASS variables and mixin, etc.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Main challenges I have faced
 
-### `npm run build`
+### Learning a new languaje
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+learning a new language is always a challenge. As it is a subset within javascript the learning curve is being very fast. Also, I am quickly realizing the usefulness of having declared variable types as well as interfaces and creating new types.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Status
 
-### `npm run eject`
+It is just beginning. Super WIP.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Stack
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+For now, the stack used is React.ts and SASS as CSS processor. 

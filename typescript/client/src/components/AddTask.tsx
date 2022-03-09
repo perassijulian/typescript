@@ -1,13 +1,5 @@
 import React from 'react'
-
-type Place = 'Home' | 'Work' | { custom: string };
-
-type Todo = Readonly<{
-    id: number,
-    text: string,
-    done: boolean,
-    place?: Place,
-}>
+import { Todo } from '../interfaces';
 
 interface AddTaskProps {
     todo: Todo;
@@ -15,8 +7,6 @@ interface AddTaskProps {
 }
 
 const AddTask = ({ todo, setTodo }: AddTaskProps) => {
-
-    const todos: Todo[] = [];
 
     function handleChange(e: React.ChangeEvent<HTMLInputElement> ) {
         setTodo({...todo, text: e.currentTarget.value})
