@@ -8,9 +8,9 @@ interface TaskProps {
 }
 
 const Task = ({ todos, setTodos }: TaskProps ) => {
-//     type completedTodo = Todo & {
-//         readonly done: true
-//     }
+    type completedTodo = Todo & {
+        readonly done: true
+    }
 
     const toggleTodo = (todo: Todo): Todo => {
       console.log(todo)
@@ -24,12 +24,12 @@ const Task = ({ todos, setTodos }: TaskProps ) => {
       setTodos(newTodos);
     }
 
-//     const completeAll = (todosArray: readonly Todo[]): completedTodo[] => {
-//         return todosArray.map((todo) => ({
-//             ...todo,
-//             done: true
-//         }))
-//     }
+    const completeAll = (todosArray: readonly Todo[]) => {
+        setTodos(todosArray.map((todo) => ({
+            ...todo,
+            done: true
+        })))
+    }
 
 //     const placeToString = (place: Place): string => {
 //         switch (place) {
@@ -58,6 +58,7 @@ const Task = ({ todos, setTodos }: TaskProps ) => {
             <p>{todo.text}</p>
           </div>
         )})}
+        <button onClick={() => completeAll(todos)}>Mark all as done</button>
     </div>
   )
 }
