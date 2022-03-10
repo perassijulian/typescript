@@ -1,21 +1,32 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Todo } from '../interfaces';
 
 interface AddTaskProps {
-    todo: Todo;
-    setTodo: React.Dispatch<React.SetStateAction<Todo>>
+    todos: Todo[];
+    setTodos: React.Dispatch<React.SetStateAction<Readonly<Todo>[]>>
 }
 
-const AddTask = ({ todo, setTodo }: AddTaskProps) => {
+const AddTask = ({ todos, setTodos }: AddTaskProps) => {
+    const defaultTodo: Todo = {
+        id: 0,
+        text: "",
+        done: false,
+      }
+    
+    const [todo, setTodo] = useState<Todo>(defaultTodo);
 
     function handleChange(e: React.ChangeEvent<HTMLInputElement> ) {
-        setTodo({...todo, text: e.currentTarget.value})
+        setTodo({
+            id: todos.length, 
+            text: e.currentTarget.value, 
+            done: false
+        })
     }
 
     function addTask(e: React.FormEvent<HTMLFormElement>) {
         e.preventDefault();
-        console.log(todo);
-
+        setTodos([...todos, todo]);
+        setTodo(defaultTodo);
     }
 
     return (

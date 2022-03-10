@@ -7,22 +7,19 @@ import Task from './components/Task';
 import { Todo } from './interfaces';
 
 function App() {
-  const [todo, setTodo] = useState<Todo>({
-    id: 0,
-    text: "",
-    done: false,
-  });
-
-  const todos: Todo[] = [];
+  const [todos, setTodos] = useState<Todo[]>([])
 
   return (
     <div className="App">
       <h1>Tasks</h1>
       <AddTask 
-        todo={todo} 
-        setTodo={setTodo} 
+        todos={todos} 
+        setTodos={setTodos} 
       />
-      <Task todo={todo} />
+      <Task 
+        todos={todos} 
+        setTodos={setTodos}
+      />
     </div>
   );
 }

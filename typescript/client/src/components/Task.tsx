@@ -1,26 +1,28 @@
 import "./styles.scss";
+import { Todo } from '../interfaces';
 
-type Place = 'Home' | 'Work' | { custom: string };
-
-type Todo = Readonly<{
-    id: number,
-    text: string,
-    done: boolean,
-    place?: Place,
-}>
 
 interface TaskProps {
-    todo: Todo;
+    todos: Todo[];
+    setTodos: React.Dispatch<React.SetStateAction<Todo[]>>;
 }
 
-const Task = ({ todo }: TaskProps ) => {
+const Task = ({ todos, setTodos }: TaskProps ) => {
 //     type completedTodo = Todo & {
 //         readonly done: true
 //     }
 
-//     const toggleTodo = (todo: Todo): Todo => {
-//         return {...todo, done: !todo.done}
-//     }
+    const toggleTodo = (todo: Todo): Todo => {
+      console.log(todo)
+        return {...todo, done: !todo.done}
+    }
+
+    const toggleTask = (todo: Todo) => {
+      const todoToggled: Todo= toggleTodo(todo);
+      const newTodos: Todo[] = [...todos];
+      newTodos[todo.id] = todoToggled;
+      setTodos(newTodos);
+    }
 
 //     const completeAll = (todosArray: readonly Todo[]): completedTodo[] => {
 //         return todosArray.map((todo) => ({
@@ -44,7 +46,18 @@ const Task = ({ todo }: TaskProps ) => {
     
   return (
     <div className='task'>
-        <p>{todo.text}</p>
+      {todos.map((todo) => {
+        return (
+          <div className="task--item">
+            <input 
+              type='checkbox' 
+              key={todo.id} 
+              checked={todo.done} 
+              onChange={() => toggleTask(todo)}
+            ></input>
+            <p>{todo.text}</p>
+          </div>
+        )})}
     </div>
   )
 }
