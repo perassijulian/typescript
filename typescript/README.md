@@ -18,7 +18,11 @@ The main concepts that I reaffirmed doing this project were the basic typescript
 
 ### Learning a new languaje
 
-learning a new language is always a challenge. As it is a subset within javascript the learning curve is being very fast. Also, I am quickly realizing the usefulness of having declared variable types as well as interfaces and creating new types.
+Learning a new language is always a challenge. As it is a subset within javascript the learning curve is being very fast. Also, I am quickly realizing the usefulness of having declared variable types as well as interfaces and creating new types.
+
+### Classes
+
+I had always known about the concept of classes but never had the need to define them until now. From the server side a good practice is to define the controllers as classes. This allowed me to begin to learn more about the definition and use of them.
 
 
 ## Status
