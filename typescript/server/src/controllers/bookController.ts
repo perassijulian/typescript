@@ -1,14 +1,42 @@
 import { Request, Response, NextFunction } from 'express';
+import Book from '../models/book';
+import { BookType } from '../interfaces';
 
-export const getAllBooks = (req: Request, res: Response, next: NextFunction) => {
-    res.status(200).send("get all books");
+class BookController {
+    public getAllBooks = async (req: Request, res: Response, next: NextFunction): Promise<void> => {
+        try {
+            const allBooks: BookType[] = await Book.find({})
+            res.status(200).json(allBooks);
+        } catch (error) {
+            res.status(400);
+            console.log(error)
+        };
+    }
+    
+    public getSpecificBook = async (req: Request, res: Response, next: NextFunction): Promise<void> => {
+        try {
+            const bookSelected: BookType | null = await Book.findOne({_id: req.params.id})
+            if (bookSelected) {
+                res.status(200).json(bookSelected);
+            } else {
+                res.status(404)
+                throw new Error('There is no book with that id')
+            }
+        } catch (error) {
+            res.status(400);
+            console.log(error)
+        };
+    }
+    
+    public addNewBook = async (req: Request, res: Response, next: NextFunction): Promise<void> => {
+        try {
+            const newBook: BookType = await Book.create(req.body);
+            res.status(201).json(newBook);
+        } catch (error) {
+            res.status(400);
+            console.log(error)
+        };
+    }
 }
 
-export const getSpecificBook = (req: Request, res: Response, next: NextFunction) => {
-    res.status(200).send("get specific book");
-}
-
-export const addNewBook = (req: Request, res: Response, next: NextFunction) => {
-    res.status(200).send("add new book");
-}
-
+export const bookController: BookController = new BookController();

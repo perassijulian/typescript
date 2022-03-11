@@ -1,10 +1,10 @@
 import { Router } from 'express';
-import { getAllBooks, getSpecificBook, addNewBook } from '../controllers/bookController';
+import { bookController } from '../controllers/bookController';
 
 const bookRouter: Router = Router();
 
-bookRouter.get("/", getAllBooks)
-bookRouter.get("/:id", getSpecificBook)
-bookRouter.post("/add", addNewBook)
+bookRouter.get("/", bookController.getAllBooks)
+bookRouter.get("/:id", bookController.getSpecificBook)
+bookRouter.post("/add", bookController.addNewBook)
 
 export default bookRouter;
