@@ -1,4 +1,5 @@
-import React from 'react'
+import './styles.scss';
+
 import { useSelector } from 'react-redux'
 import { RootState } from '../../app/store'
 import BookComponent from './BookComponent';
@@ -8,7 +9,7 @@ const BooksDisplay = () => {
   console.log(books);
 
   return (
-    <div>
+    <div className='booksDisplay'>
       {books.map((book) => {
         return <BookComponent book={book} />
       })}

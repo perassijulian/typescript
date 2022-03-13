@@ -1,4 +1,4 @@
-import React from 'react'
+import './styles.scss';
 import { BookType } from '../../../interfaces'
 
 interface BookComponentProps {
@@ -7,7 +7,7 @@ interface BookComponentProps {
 
 const BookComponent = ({book}: BookComponentProps) => {
   return (
-    <div>
+    <div className='bookComponent'>
       <h4>{book.title}</h4>
       <h4>{book.author}</h4>
       <h4>{book.isbn}</h4>
