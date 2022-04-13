@@ -1,0 +1,21 @@
+@import '../../variables.scss';
+
+
+.portfolioList{
+    margin: 16px;
+    padding: 8px;
+
+    font-size: $sFont;
+    font-weight: 500;
+    cursor: pointer;
+
+    &:hover{
+        background-color: lightgray;
+        border-radius: 4px;
+    }
+
+    &.active{
+        background-color: $secColor;
+        border-radius: 4px;
+    }
+}

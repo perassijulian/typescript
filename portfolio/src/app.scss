@@ -1,0 +1,19 @@
+@import './variables.scss';
+
+.app{
+    height: 100vh;
+}
+
+.sections{
+    width: 100%;
+    height: calc(100vh - $topbarHeigth);
+    position: relative;
+    top: $topbarHeigth;
+    background-color: red;
+    scroll-behavior: smooth;
+
+    > * {
+        width: 100%;
+        height: calc(100vh - $topbarHeigth);
+    }
+}

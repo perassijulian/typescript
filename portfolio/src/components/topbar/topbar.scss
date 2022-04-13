@@ -1,0 +1,94 @@
+@import '../../variables.scss';
+
+.topbar{
+    position: fixed;
+    z-index: 2;
+    top: 0;
+    background-color: $secColor;
+    color: $mainColor;
+    height: $topbarHeigth;
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+
+    transition: all 1s ease;
+
+    &--wrapper{
+        margin: 16px;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+
+        &--left{
+            display: flex;
+            align-items: center;
+
+            h2{
+                font-size: 24px;
+                font-weight: 800;
+
+            }
+
+            &--itemContainer{
+
+                margin-left: 24px;
+                display: flex;
+                align-items: center;
+
+                span{
+                    font-size: 16px;
+                }
+
+                &--icon{
+                    font-size: 18px;
+                    margin-right: 6px;
+                }
+            }
+        }
+
+        &--right{
+            display: flex;
+            align-items: center;
+
+            .hamburguer{
+                width: 32px;
+                height: 25px;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                cursor: pointer;
+                
+                span{
+                    width: 100%;
+                    height: 3px;
+                    background-color: $mainColor;
+                    transform-origin: left;
+                    transition: all 2s ease;
+                }
+            }
+        }
+    }
+
+    &.active{
+        background-color: $mainColor;
+        color: $secColor;
+
+        .hamburguer{
+
+            span{
+                background-color: $secColor;
+
+                &:first-child{
+                    transform: rotate(45deg);
+                }
+                &:nth-child(2){
+                    opacity: 0;
+                }
+                &:last-child{
+                    transform: rotate(-45deg);
+                }
+            }
+        }
+    }
+}
